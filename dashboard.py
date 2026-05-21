@@ -19,6 +19,9 @@ class DashboardWindow(QWidget):
 
         # Title
         self.title = QLabel("GoalMaster Dashboard")
+        self.title.setStyleSheet(
+            "font-size: 26px; font-weight: bold; color:#00aaff;"
+        )
 
         # Buttons
         self.players_button = QPushButton("Players")

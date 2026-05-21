@@ -19,6 +19,8 @@ class LoginWindow(QWidget):
 
         # Title
         self.title = QLabel("Football Team Manager")
+        self.title.setStyleSheet(
+            "font-size: 28px; font-weight: bold; color:#00aaff;")
 
         # Username Input
         self.username_input = QLineEdit()
