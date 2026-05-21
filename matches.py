@@ -18,10 +18,8 @@ class MatchesWindow(QWidget):
         self.setWindowTitle("Matches Management")
         self.setGeometry(400, 200, 700, 500)
 
-        # Title
         self.title = QLabel("Matches Management")
 
-        # Inputs
         self.opponent_input = QLineEdit()
         self.opponent_input.setPlaceholderText(
             "Opponent Team"
@@ -37,14 +35,12 @@ class MatchesWindow(QWidget):
             "Match Date"
         )
 
-        # Buttons
         self.add_button = QPushButton("Add Match")
 
         self.delete_button = QPushButton(
             "Delete Selected Match"
         )
 
-        # Table
         self.table = QTableWidget()
 
         self.table.setColumnCount(3)
@@ -55,7 +51,6 @@ class MatchesWindow(QWidget):
             "Date"
         ])
 
-        # Button Actions
         self.add_button.clicked.connect(
             self.add_match
         )
@@ -64,7 +59,6 @@ class MatchesWindow(QWidget):
             self.delete_match
         )
 
-        # Layout
         layout = QVBoxLayout()
 
         layout.addWidget(self.title)
@@ -80,7 +74,6 @@ class MatchesWindow(QWidget):
 
         self.setLayout(layout)
 
-        # Load Matches
         self.load_matches()
 
     def add_match(self):

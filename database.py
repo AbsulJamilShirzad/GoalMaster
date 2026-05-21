@@ -7,7 +7,6 @@ def connect_db():
 
     cursor = connection.cursor()
 
-    # Players Table
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS players (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -19,7 +18,6 @@ def connect_db():
         )
     """)
 
-    # Matches Table
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS matches (
             id INTEGER PRIMARY KEY AUTOINCREMENT,

@@ -17,27 +17,21 @@ class LoginWindow(QWidget):
         self.setWindowTitle(" GoalMaster Login")
         self.setGeometry(500, 200, 300, 200)
 
-        # Title
         self.title = QLabel("Football Team Manager")
         self.title.setStyleSheet(
             "font-size: 28px; font-weight: bold; color:#00aaff;")
 
-        # Username Input
         self.username_input = QLineEdit()
         self.username_input.setPlaceholderText("Username")
 
-        # Password Input
         self.password_input = QLineEdit()
         self.password_input.setPlaceholderText("Password")
         self.password_input.setEchoMode(QLineEdit.Password)
 
-        # Login Button
         self.login_button = QPushButton("Login")
 
-        # Button Action
         self.login_button.clicked.connect(self.login)
 
-        # Layout
         layout = QVBoxLayout()
 
         layout.addWidget(self.title)

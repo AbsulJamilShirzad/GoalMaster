@@ -5,12 +5,12 @@ from PySide6.QtWidgets import QApplication
 from login import LoginWindow
 from database import connect_db
 
-# Create Database
+
 connect_db()
 
 app = QApplication(sys.argv)
 
-# App Style
+
 app.setStyleSheet("""
 
 QWidget {

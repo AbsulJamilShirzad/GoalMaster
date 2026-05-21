@@ -18,10 +18,8 @@ class PlayersWindow(QWidget):
         self.setWindowTitle("Players Management")
         self.setGeometry(400, 200, 700, 500)
 
-        # Title
         self.title = QLabel("Players Management")
 
-        # Inputs
         self.name_input = QLineEdit()
         self.name_input.setPlaceholderText("Player Name")
 
@@ -37,7 +35,6 @@ class PlayersWindow(QWidget):
         self.goals_input = QLineEdit()
         self.goals_input.setPlaceholderText("Goals")
 
-        # Buttons
         self.add_button = QPushButton("Add Player")
 
         self.delete_button = QPushButton(
@@ -48,7 +45,6 @@ class PlayersWindow(QWidget):
             "Update Selected Player"
         )
 
-        # Table
         self.table = QTableWidget()
 
         self.table.setColumnCount(5)
@@ -61,7 +57,6 @@ class PlayersWindow(QWidget):
             "Goals"
         ])
 
-        # Button Actions
         self.add_button.clicked.connect(self.add_player)
 
         self.delete_button.clicked.connect(
@@ -76,7 +71,6 @@ class PlayersWindow(QWidget):
             self.select_player
         )
 
-        # Layout
         layout = QVBoxLayout()
 
         layout.addWidget(self.title)
@@ -95,7 +89,6 @@ class PlayersWindow(QWidget):
 
         self.setLayout(layout)
 
-        # Load Players
         self.load_players()
 
     def add_player(self):

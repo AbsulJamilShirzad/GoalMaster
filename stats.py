@@ -14,22 +14,17 @@ class StatsWindow(QWidget):
         self.setWindowTitle("Statistics")
         self.setGeometry(400, 200, 400, 300)
 
-        # Layout
         layout = QVBoxLayout()
 
-        # Database Connection
         connection = sqlite3.connect("database.db")
         cursor = connection.cursor()
 
-        # Total Players
         cursor.execute("SELECT COUNT(*) FROM players")
         total_players = cursor.fetchone()[0]
 
-        # Total Matches
         cursor.execute("SELECT COUNT(*) FROM matches")
         total_matches = cursor.fetchone()[0]
 
-        # Total Goals
         cursor.execute("SELECT SUM(goals) FROM players")
 
         total_goals = cursor.fetchone()[0]
@@ -37,7 +32,6 @@ class StatsWindow(QWidget):
         if total_goals is None:
             total_goals = 0
 
-        # Top Scorer
         cursor.execute("""
             SELECT name, goals
             FROM players
@@ -56,7 +50,6 @@ class StatsWindow(QWidget):
         else:
             top_scorer_text = "No Players"
 
-        # Labels
         self.players_label = QLabel(
             f"Total Players: {total_players}"
         )
@@ -73,7 +66,6 @@ class StatsWindow(QWidget):
             f"Top Scorer: {top_scorer_text}"
         )
 
-        # Add Widgets
         layout.addWidget(self.players_label)
         layout.addWidget(self.matches_label)
         layout.addWidget(self.goals_label)
