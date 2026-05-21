@@ -14,7 +14,7 @@ class LoginWindow(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle("GoalMaster Login")
+        self.setWindowTitle(" GoalMaster Login")
         self.setGeometry(500, 200, 300, 200)
 
         # Title
